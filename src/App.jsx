@@ -5,6 +5,7 @@ import ProductPage from './components/ProductPage.jsx'
 import LandingPage from './Pages/LandingPage.jsx';
 import ResponsiveNav from './components/ResponsiveNav.jsx';
 import Launch from './Pages/Launch.jsx'
+import HelpPage from './Pages/HelpPage';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/explore" element={<CrowdfundingPlatform />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/launch" element={<Launch/>} />
+        <Route path='/help' element={<HelpPage/>} />
       </Routes>
     </Router>
   );
