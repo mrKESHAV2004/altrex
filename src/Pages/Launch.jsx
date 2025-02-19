@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import {Rocket} from 'lucide-react'
 
 const CampaignForm = () => {
   const [image, setImage] = useState(null);
@@ -16,48 +15,85 @@ const CampaignForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-900 via-purple-900 to-indigo-900 text-white flex items-center justify-center p-6">
-      <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl w-full max-w-lg">
-        <h2 className="text-2xl font-bold mb-6 text-center">Launch Your Campaign</h2>
-        <form>
-          <div className="mb-4">
-            <label className="block mb-2 text-sm font-medium" htmlFor="title">Campaign Title</label>
-            <input type="text" id="title" className="w-full p-3 rounded bg-gray-700 text-white border border-gray-600 focus:ring focus:ring-blue-500" placeholder="Enter campaign title" required />
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white flex items-center justify-center p-6">
+      <div className="bg-gradient-to-b from-gray-800/80 to-gray-900/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl w-full max-w-7xl border border-gray-700/50">
+        <h2 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Launch Your Campaign</h2>
+        
+        <form className="flex flex-col lg:flex-row gap-8">
+          {/* Left Column */}
+          <div className="flex-1 space-y-6">
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-300" htmlFor="title">Campaign Title</label>
+              <input type="text" id="title" className="w-full p-3 rounded-lg bg-gray-800/50 text-white border border-gray-600 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 placeholder-gray-400" placeholder="Enter campaign title" required />
+            </div>
+            
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-300" htmlFor="description">Description</label>
+              <textarea id="description" className="w-full p-3 rounded-lg bg-gray-800/50 text-white border border-gray-600 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 placeholder-gray-400" placeholder="Describe your campaign" rows="4" required ></textarea>
+            </div>
+            
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-300" htmlFor="goal">Funding Goal ($)</label>
+              <input type="number" id="goal" className="w-full p-3 rounded-lg bg-gray-800/50 text-white border border-gray-600 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 placeholder-gray-400" placeholder="Enter funding goal" required />
+            </div>
+            
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-300" htmlFor="image">Upload Image</label>
+              <div className="relative">
+                <input type="file" id="image" accept="image/*" className="w-full p-3 rounded-lg bg-gray-800/50 text-white border border-gray-600 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-purple-500 file:text-white hover:file:bg-purple-400" onChange={handleImageChange} />
+              </div>
+              {image && (
+                <div className="mt-4 rounded-lg overflow-hidden border border-gray-700">
+                  <img src={image} alt="Campaign Preview" className="w-full h-48 object-cover" />
+                </div>
+              )}
+            </div>
+            
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-300" htmlFor="crypto">Select Cryptocurrency</label>
+              <select id="crypto" className="w-full p-3 rounded-lg bg-gray-800/50 text-white border border-gray-600 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200" required>
+                <option value="bitcoin">Bitcoin (BTC)</option>
+                <option value="ethereum">Ethereum (ETH)</option>
+                <option value="bnb">Binance Coin (BNB)</option>
+                <option value="solana">Solana (SOL)</option>
+                <option value="cardano">Cardano (ADA)</option>
+              </select>
+            </div>
           </div>
-          
-          <div className="mb-4">
-            <label className="block mb-2 text-sm font-medium" htmlFor="description">Description</label>
-            <textarea id="description" className="w-full p-3 rounded bg-gray-700 text-white border border-gray-600 focus:ring focus:ring-blue-500" placeholder="Describe your campaign" rows="4" required ></textarea>
-          </div>
-          
-          <div className="mb-4">
-            <label className="block mb-2 text-sm font-medium" htmlFor="goal">Funding Goal ($)</label>
-            <input type="number" id="goal" className="w-full p-3 rounded bg-gray-700 text-white border border-gray-600 focus:ring focus:ring-blue-500" placeholder="Enter funding goal" required />
-          </div>
-          
-          <div className="mb-4">
-            <label className="block mb-2 text-sm font-medium" htmlFor="image">Upload Image</label>
-            <input type="file" id="image" accept="image/*" className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded" onChange={handleImageChange} />
-            {image && <img src={image} alt="Campaign Preview" className="mt-4 w-full h-40 object-cover rounded" />}
-          </div>
-          
-          <div className="mb-4">
-            <label className="block mb-2 text-sm font-medium" htmlFor="crypto">Select Cryptocurrency</label>
-            <select id="crypto" className="w-full p-3 rounded bg-gray-700 text-white border border-gray-600 focus:ring focus:ring-blue-500" required >
-              <option value="bitcoin">Bitcoin (BTC)</option>
-              <option value="ethereum">Ethereum (ETH)</option>
-              <option value="bnb">Binance Coin (BNB)</option>
-              <option value="solana">Solana (SOL)</option>
-              <option value="cardano">Cardano (ADA)</option>
-            </select>
-          </div>
-          
-          <div className="flex justify-center">
-          <button type="submit" className="group bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 rounded-xl font-semibold hover:scale-105 transition-all shadow-lg shadow-purple-500/25">
-            <span className="flex items-center">
-              Launch Campaign <Rocket className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </span>
-          </button>
+
+          {/* Right Column */}
+          <div className="flex-1 space-y-6">
+            <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Special Rewards</h3>
+            
+            <div className="space-y-4">
+              <div className="p-4 rounded-lg bg-gradient-to-r from-gray-800/50 to-gray-700/30 border border-gray-700/50">
+                <label className="block mb-3 font-medium text-purple-300">Starter Pack</label>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <input type="number" className="flex-1 p-3 rounded-lg bg-gray-800/50 text-white border border-gray-600 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 placeholder-gray-400" placeholder="Investment amount" required />
+                  <input type="text" className="flex-1 p-3 rounded-lg bg-gray-800/50 text-white border border-gray-600 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 placeholder-gray-400" placeholder="Reward description" required />
+                </div>
+              </div>
+              
+              <div className="p-4 rounded-lg bg-gradient-to-r from-gray-800/50 to-gray-700/30 border border-gray-700/50">
+                <label className="block mb-3 font-medium text-blue-300">Advanced Pack</label>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <input type="number" className="flex-1 p-3 rounded-lg bg-gray-800/50 text-white border border-gray-600 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 placeholder-gray-400" placeholder="Investment amount" />
+                  <input type="text" className="flex-1 p-3 rounded-lg bg-gray-800/50 text-white border border-gray-600 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 placeholder-gray-400" placeholder="Reward description" />
+                </div>
+              </div>
+              
+              <div className="p-4 rounded-lg bg-gradient-to-r from-gray-800/50 to-gray-700/30 border border-gray-700/50">
+                <label className="block mb-3 font-medium text-indigo-300">Premium Pack</label>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <input type="number" className="flex-1 p-3 rounded-lg bg-gray-800/50 text-white border border-gray-600 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 placeholder-gray-400" placeholder="Investment amount" />
+                  <input type="text" className="flex-1 p-3 rounded-lg bg-gray-800/50 text-white border border-gray-600 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 placeholder-gray-400" placeholder="Reward description" />
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" className="w-full mt-8 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-semibold py-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-[1.02] focus:scale-[0.98]">
+              Launch Campaign
+            </button>
           </div>
         </form>
       </div>
