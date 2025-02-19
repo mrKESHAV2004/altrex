@@ -31,11 +31,14 @@ const LandingPage = () => {
               of possibility through secure blockchain technology.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 rounded-xl font-semibold hover:scale-105 transition-all shadow-lg shadow-purple-500/25">
-                <span className="flex items-center">
-                  Launch Campaign <Rocket className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </button>
+              <Link to={'/launch'}>
+                <button className="group bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 rounded-xl font-semibold hover:scale-105 transition-all shadow-lg shadow-purple-500/25">
+                  <span className="flex items-center">
+                    Launch Campaign <Rocket className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </button>
+              </Link>
+              
               <Link to="/explore">
                 <button className="group bg-white/5 backdrop-blur-sm border border-white/10 px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all">
                   <span className="flex items-center">
@@ -61,10 +64,10 @@ const LandingPage = () => {
                   <Globe className="text-purple-400" size={28} />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-center">Documentation</h3>
-                <ul className="space-y-2 text-blue-100">
-                  <li>• Blockchain Integration Guide</li>
-                  <li>• Smart Contract Templates</li>
-                  <li>• API Documentation</li>
+                <ul className="space-y-2 text-blue-100 text-center">
+                  <li>Blockchain Integration Guide</li>
+                  <li>Smart Contract Templates</li>
+                  <li>API Documentation</li>
                 </ul>
               </div>
               <div className="p-6 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
@@ -72,10 +75,10 @@ const LandingPage = () => {
                   <Satellite className="text-pink-400" size={28} />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-center">Community</h3>
-                <ul className="space-y-2 text-blue-100">
-                  <li>• Discord Server</li>
-                  <li>• Developer Forum</li>
-                  <li>• Weekly Webinars</li>
+                <ul className="space-y-2 text-blue-100 text-center">
+                  <li>Discord Server</li>
+                  <li>Developer Forum</li>
+                  <li>Weekly Webinars</li>
                 </ul>
               </div>
               <div className="p-6 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
@@ -83,10 +86,10 @@ const LandingPage = () => {
                   <ShieldCheck className="text-blue-400" size={28} />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-center">Support</h3>
-                <ul className="space-y-2 text-blue-100">
-                  <li>• 24/7 Help Center</li>
-                  <li>• Security Guidelines</li>
-                  <li>• Compliance Tools</li>
+                <ul className="space-y-2 text-blue-100 text-center">
+                  <li>24/7 Help Center</li>
+                  <li>Security Guidelines</li>
+                  <li>Compliance Tools</li>
                 </ul>
               </div>
             </div>
@@ -152,11 +155,13 @@ const LandingPage = () => {
           <p className="text-xl mb-8 text-blue-100">
             The cosmos of crowdfunding awaits. Start your blockchain journey today!
           </p>
+          <Link to={"/launch"}>
           <button className="group bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 rounded-xl font-semibold hover:scale-105 transition-all shadow-lg shadow-purple-500/25">
             <span className="flex items-center">
               Begin Your Mission <Rocket className="ml-2 group-hover:translate-x-1 transition-transform" />
             </span>
           </button>
+          </Link>
         </div>
       </div>
 
