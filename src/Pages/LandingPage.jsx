@@ -30,7 +30,7 @@ const LandingPage = () => {
               Join the next frontier of crowdfunding. Your ideas, launched into the stratosphere
               of possibility through secure blockchain technology.
             </p>
-            <div className="flex gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="group bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 rounded-xl font-semibold hover:scale-105 transition-all shadow-lg shadow-purple-500/25">
                 <span className="flex items-center">
                   Launch Campaign <Rocket className="ml-2 group-hover:translate-x-1 transition-transform" />

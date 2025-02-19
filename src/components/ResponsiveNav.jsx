@@ -62,10 +62,12 @@ const ResponsiveNav = () => {
       {/* Fixed Navbar */}
       <div className="fixed top-0 left-0 right-0 bg-gray-200 z-40">
         <div className="flex items-center justify-between px-4 py-3">
+          <Link to={'/'}>
           <div className="flex items-center">
             <img src={assets.logo} alt="Logo" className="w-10 h-8" />
             <span className="ml-2 text-xl">ALTREX</span>
           </div>
+          </Link>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-lg hover:bg-gray-300 transition-colors"
@@ -80,9 +82,11 @@ const ResponsiveNav = () => {
             {menuItems.map((item, index) => {
               const Icon = item.icon;
               return (
-                <div key={index} className="flex items-center px-4 py-3 cursor-pointer hover:bg-gray-700 transition-colors hover:text-white" onClick={() => setMobileMenuOpen(false)}>
+                <div key={index} onClick={() => setMobileMenuOpen(false)}>
+                <Link to={item.link} className="flex items-center px-4 py-3 cursor-pointer hover:bg-gray-700 transition-colors hover:text-white">
                   <Icon size={20} />
                   <span className="ml-4">{item.title}</span>
+                </Link>
                 </div>
               );
             })}
