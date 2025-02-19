@@ -1,4 +1,4 @@
-import logo from '/altrex-logo.png'
+import logo from '/altrex_logo.png'
 
 export const assets = {
   logo

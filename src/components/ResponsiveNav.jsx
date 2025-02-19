@@ -29,12 +29,13 @@ const ResponsiveNav = () => {
   // Desktop Sidebar
   const Sidebar = () => (
     <div  className="relative" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
-      <div className={`fixed top-0 left-0 h-screen bg-gray-200 text-black transition-all duration-300 ease-in-out z-40 ${
+      <div className={`fixed top-0 left-0 h-screen text-gray-300 transition-all duration-300 ease-in-out z-40 bg-black/50 backdrop-blur-sm ${
         isOpen ? 'w-64' : 'w-16'
       }`}>
+        
         <Link to={'/'}>
           <div className="flex items-center px-4 py-3 cursor-pointer transition-colors">    
-            <img src={assets.logo} alt="Logo" className={`transition-all duration-300 ${isOpen ? 'w-12 h-10' : 'w-12 h-8'}`}/>
+            <img src={assets.logo} alt="Logo" className={`transition-all duration-300 ${isOpen ? 'w-12 h-12' : 'w-12 h-12'}`}/>
             {isOpen && <span className="ml-4 text-xl">ALTREX</span>}
           </div>
         </Link>

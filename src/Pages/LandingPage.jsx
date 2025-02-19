@@ -95,7 +95,7 @@ const LandingPage = () => {
       </div>
 
       {/* Featured Campaigns with Space Theme */}
-      <div className="container mx-auto px-4 py-16">
+      <div className="container flex items-center justify-center flex-col mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold mb-8 text-center flex items-center justify-center">
           <Star className="mr-2" /> Featured Missions
         </h2>
