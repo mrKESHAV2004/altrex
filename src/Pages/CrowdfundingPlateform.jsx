@@ -5,9 +5,9 @@ import AnimatedCard from '../components/AnimatedCard';
 
 const CrowdfundingPlatform = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
       <header className="max-w-4xl mx-auto text-center mb-16">
-        <h1 className="text-5xl font-bold text-gray-800 mb-4">Discover Innovation</h1>
+        <h1 className="text-5xl font-bold text-gray-200 mb-4">Discover Innovation</h1>
         <p className="text-xl text-gray-600">Fund the next big idea</p>
       </header>
 
